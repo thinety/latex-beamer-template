@@ -1,0 +1,64 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{thinetycorebeamer}
+  [2019/06/08 v0.01 Beamer core functionality LaTeX package for my own purpose]
+
+
+
+%Encoding
+%--------------------------------------
+\RequirePackage{lmodern}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+%--------------------------------------
+
+%Brazilian portuguese-specific commands, English and Portuguse as second languages
+%--------------------------------------
+\RequirePackage[english,portuguese,brazilian]{babel}
+%--------------------------------------
+
+
+%Extended support for images, contained in folder ./images/
+%--------------------------------------
+\RequirePackage{graphicx}
+\graphicspath{{images/}}
+%\RequirePackage{caption}
+%\captionsetup[figure]{skip=-3pt}
+%--------------------------------------
+
+
+
+%Shows the table of contents at the beginning of each section/subsection.
+%Choose ONLY ONE, or your output will look really weird
+%--------------------------------------
+%\AtBeginSection[]
+%{
+%    \begin{frame}
+%        \tableofcontents[currentsection]
+%    \end{frame}
+%}
+\AtBeginSubsection[]
+{
+    \begin{frame}
+        \tableofcontents[currentsection,currentsubsection]
+    \end{frame}
+}
+%--------------------------------------
+
+%Visual stuff
+%--------------------------------------
+\usetheme{Berlin} % 'Berlin' , 'Warsaw' , 'Frankfurt' , 'Goettingen' , 'metropolis' , ...
+%\setbeamercovered{transparent}
+%--------------------------------------
+
+%For the title slide
+%--------------------------------------
+\title[Título curto] %opcional, só use com títulos longos
+  {Título como ele aparece na apresentação}
+\subtitle{Subtítulo da apresentação} %opcional
+\author[T. Trannin] %opcional, só use com nomes longos
+  {Thiago Trannin %\thanks{ }
+  }
+\institute[UFPR] %opcional, só use com nomes de instituição longos
+  {Universidade Federal do Paraná}
+\date{\today}
+%--------------------------------------
